@@ -1,0 +1,47 @@
+#include<iostream>
+
+using namespace std;
+int  main(){
+	int a[20],tamanho , i, inicio, fim, meio, encontrou, valorembusca, valor;
+	
+	cout << "---------------------\n";
+ 	cout << " [+] Tamanho do vetor: ";
+ 	cin >> tamanho;
+ 	
+ 	
+ 	cout << "\n---------------------";
+ 	cout << "\n +++ Insira Valores no vetor +++ \n";
+	for(i=0;i<tamanho;i++){
+   		cin >> a[i];
+	}
+	
+ 	cout << "\n---------------------\n";
+	cout << " [*] Buscar Valor: ";
+ 	cin >> valorembusca;
+	inicio = 0;
+ 	fim = tamanho-1;
+ 	encontrou = 0;
+
+ 	while(inicio <= fim && encontrou==0){
+  		meio = (inicio+fim)/2;
+  		
+		if(valorembusca > a[meio]){
+   			inicio=meio+1;
+   			valor=a[meio];
+		
+		}else if(valorembusca < a[meio]){
+   			fim=meio-1;
+  			valor=a[meio];
+  		}else{
+  			encontrou=1;
+		}
+	}
+	
+ 	if(encontrou){
+ 		cout<<"\n Valor encontrado \n posicao no vetor:  " << meio << endl;	
+ 	}else{
+ 		cout<<" valor nao encontrado \n";
+ 	}
+
+
+}
